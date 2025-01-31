@@ -1,17 +1,12 @@
 // components/ScrollableDateList.tsx
 import React from 'react';
-import { FlatList, StyleSheet, ViewToken } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { DateCell } from './DateCell';
 import { isCurrentDate, isSelectedDate } from '../utils/dateUtils';
+import { ScrollableDateListProps } from '../types';
 
-interface ScrollableDateListProps {
-  dates: Date[];
-  selectedDate: Date;
-  onDateSelect: (date: Date) => void;
-  onViewableItemsChanged: ({ viewableItems }: { viewableItems: ViewToken[] }) => void;
-  onEndReached: () => void;
-  onStartReached: () => void;
-}
+// This sub-component is used for putting all dates in a list and 
+// rendering the cells that are coming into the screen after scrolling
 
 export const ScrollableDateList = ({
   dates,
@@ -38,7 +33,6 @@ export const ScrollableDateList = ({
   );
 
   React.useEffect(() => {
-    // Scroll to middle on initial render
     const currentDateIndex = dates.findIndex(date => isCurrentDate(date));
     if (currentDateIndex !== -1 && flatListRef.current) {
       flatListRef.current.scrollToIndex({
@@ -67,7 +61,7 @@ export const ScrollableDateList = ({
         minIndexForVisible: 0,
       }}
       getItemLayout={(data, index) => ({
-        length: 70, // width + marginHorizontal
+        length: 70, 
         offset: 70 * index,
         index,
       })}

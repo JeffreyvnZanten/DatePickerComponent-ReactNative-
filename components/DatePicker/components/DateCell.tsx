@@ -4,12 +4,15 @@ import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { DateCellProps } from '../types';
 import { getDayAbbreviation, getDateNumber } from '../utils/dateFormatters';
 
+// This sub-component is used for displaying one date with its styling and text
+
 export const DateCell = ({
   date,
   isSelected,
   isCurrentDate,
   onSelect,
 }: DateCellProps) => {
+
   return (
     <TouchableOpacity
       style={[

@@ -8,6 +8,9 @@ import { getMonthName } from '../utils/dateFormatters';
 
 const LOAD_BATCH_SIZE = 20;
 
+// This component contains all sub-components and 
+// handles most state of the DatePicker functionality
+
 export const DatePickerContainer = () => {
 
   const [dates, setDates] = useState(() => {

@@ -1,17 +1,25 @@
 // components/DatePickerHeader.tsx
 import React from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, Image, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Image, View } from 'react-native';
 import { DatePickerHeaderProps } from '../types';
+
+const openCalendar = () => {
+
+}
+
+// This sub-component is the header of the DatePicker component. 
+// It shows the name of the month of most cells on the selection and shows an calendar icon.
+// Pressing it opens the calendar for more precise datepicking
 
 export const DatePickerHeader = ({
   monthName,
 }: DatePickerHeaderProps) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={openCalendar}>
         <Image
-          source={require('../../../assets/icons/calendar.png')} 
-          style={{ width: 28, height: 28 }}
+          source={require('../../../assets/icons/calendar-color.png')} 
+          style={{ width: 46, height: 46 }}
         />
       </TouchableOpacity>
       <Text style={styles.monthText}>{monthName}</Text>
