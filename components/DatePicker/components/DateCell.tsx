@@ -1,4 +1,3 @@
-// components/DateCell.tsx
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { DateCellProps } from '../types';

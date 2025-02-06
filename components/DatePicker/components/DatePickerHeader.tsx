@@ -1,4 +1,3 @@
-// components/DatePickerHeader.tsx
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, Image, View } from 'react-native';
 import { DatePickerHeaderProps } from '../types';

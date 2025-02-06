@@ -1,4 +1,3 @@
-// components/ScrollableDateList.tsx
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import { DateCell } from './DateCell';

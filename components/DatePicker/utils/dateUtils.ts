@@ -1,6 +1,5 @@
 // This function checks if the date provided is the current date
-
-export const isCurrentDate = (date: Date): boolean => {
+export function isCurrentDate(date: Date): boolean {
   const today = new Date();
 
   return (
@@ -11,8 +10,8 @@ export const isCurrentDate = (date: Date): boolean => {
 };
   
 // This function checks if the date provided is the selected date
+export function isSelectedDate(date: Date, selectedDate: Date): boolean {
 
-export const isSelectedDate = (date: Date, selectedDate: Date): boolean => {
   return (
     date.getDate() === selectedDate.getDate() &&
     date.getMonth() === selectedDate.getMonth() &&
